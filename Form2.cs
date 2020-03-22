@@ -17,51 +17,53 @@ namespace Radar
             InitializeComponent();
             DrawingGrid();
         }
-        void DrawingGrid() { RadarDraw radar = new RadarDraw(); pictureBox1.BackgroundImage = radar.Grid(pictureBox1.Width, pictureBox1.Height, 15); }
+        void DrawingGrid() {
+            RadarDraw radar = new RadarDraw();
+            pictureBox1.BackgroundImage = radar.Grid(pictureBox1.Width, pictureBox1.Height, 15);
+        }
         List<Point> list = new List<Point>();
         bool flag = false;
         Image image;
         double o;
         int ex;
         int ey;
-        private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {               
-                if (flag)
-                {
-                    Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-                    Graphics g = Graphics.FromImage(bmp);
-                    list.Add(new Point(e.X, e.Y));
-                    g.DrawLines(new Pen(Color.FromArgb(255, 170, 130, 0), 3), list.ToArray());
-                    image = pictureBox1.Image = bmp;
-                }
-                else
-                {
-                    list.Add(new Point(e.X, e.Y));
-                    flag = true;
-                }
-            }
 
-            ex = e.X;ey = e.Y;
-            pictureBox1.Refresh();
+        //private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    if (e.Button == MouseButtons.Left)
+        //    {
+        //        if (flag)
+        //        {
+        //            Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+        //            Graphics g = Graphics.FromImage(bmp);
+        //            list.Add(new Point(e.X, e.Y));
+        //            g.DrawLines(new Pen(Color.FromArgb(255, 170, 130, 0), 3), list.ToArray());
+        //            image = pictureBox1.Image = bmp;
+        //        }
+        //        else
+        //        {
+        //            list.Add(new Point(e.X, e.Y));
+        //            flag = true;
+        //        }
+        //    }
+        //    ex = e.X; ey = e.Y;
+        //    pictureBox1.Refresh();
+        //}
 
-        }
+        //private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    list = new List<Point>(); flag = false;
 
-        private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
-        {
-            list = new List<Point>(); flag = false;
+        //    float km = (((float)pictureBox1.Height) / (15 * 10)) / 2;
+        //    PointF point = new PointF(pictureBox1.Width / 2, pictureBox1.Height / 2);
+        //    PolarCoordinate polar = new PolarCoordinate();
+        //    double[] ar = polar.Polar(point, ex, ey);
+        //    Airplane.StartAzimuth = ar[1];
+        //    Airplane.StartDistance = ar[0] / km;
+        //    textBox2.Text = Airplane.StartAzimuth.ToString();
+        //    textBox3.Text = Airplane.StartDistance.ToString();
 
-            float km = (((float)pictureBox1.Height) / (15 * 10)) / 2;
-            PointF point = new PointF(pictureBox1.Width / 2, pictureBox1.Height / 2);
-            PolarCoordinate polar = new PolarCoordinate();
-            double[] ar = polar.Polar(point, ex, ey);
-            Airplane.StartAzimuth = ar[1];
-            Airplane.StartDistance = ar[0] / km;
-            textBox2.Text = Airplane.StartAzimuth.ToString();
-            textBox3.Text = Airplane.StartDistance.ToString();
-
-        }
+        //}
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -158,17 +160,11 @@ namespace Radar
             textBox4.Text = Airplane.EndAzimuth.ToString();
             textBox5.Text = Airplane.EndDistance.ToString();
             textBox7.Text = Airplane.vys.ToString();
-            
-            
             int count = 0;
-
-
             foreach (Point h in list)
             {
                 count++;
                 double[] array = polar.Polar(point, h.X, h.Y);
-                
-
             }
             Airplane.Lenght = count;
             Airplane.Trajectory = new double[count, 2];
@@ -185,7 +181,6 @@ namespace Radar
             }
             Airplane.Distance = polar.Kilometers(mile, Airplane.Lenght) / km;
             label1.Text = "Растояние : " + Airplane.Distance.ToString("0.00")+" км";
-
         }
 
         private void RadioButton1_CheckedChanged(object sender, EventArgs e)
