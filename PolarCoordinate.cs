@@ -55,7 +55,7 @@ namespace Radar
         /// </summary>
         /// <param name="Tra"></param>
         /// <param name="count"></param>
-        /// <returns></returns>
+        /// <returns>double km</returns>
         public double Kilometers(double[,] Tra, int count)
         {
             double km = 0;
@@ -96,10 +96,9 @@ namespace Radar
                 if (bx == true) { if (xy.X < x6) { xy.X += speed; } else { okx = true; } } else { if (xy.X > x6) { xy.X -= speed; } else { okx = true; } }
                 if (by == true) { if (xy.Y < y6) { xy.Y += speed; } else { oky = true; } } else { if (xy.Y > y6) { xy.Y -= speed; } else { oky = true; } }
                 if (okx == true && oky == true) { if (lenght > ag + 2) { ag++; } else { break;  } pop = true; }
-
                 list.Add(xy);
-                
             }
+
             foreach (PointF a in list)
             {
                 cou++;

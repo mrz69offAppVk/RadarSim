@@ -1,6 +1,6 @@
 ﻿namespace Radar
 {
-    partial class Form1
+    partial class RadarForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RadarForm));
+            this.pictureBoxF1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -50,24 +50,24 @@
             this.button6 = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.button7 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxF1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxF1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1170, 609);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox1_Paint);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBox1_MouseMove);
-            this.pictureBox1.Resize += new System.EventHandler(this.PictureBox1_Resize);
+            this.pictureBoxF1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBoxF1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxF1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxF1.Name = "pictureBoxF1";
+            this.pictureBoxF1.Size = new System.Drawing.Size(898, 609);
+            this.pictureBoxF1.TabIndex = 0;
+            this.pictureBoxF1.TabStop = false;
+            this.pictureBoxF1.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxF1_Paint);
+            this.pictureBoxF1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBoxF1_MouseMove);
+            this.pictureBoxF1.Resize += new System.EventHandler(this.PictureBox1_Resize);
             // 
             // button1
             // 
@@ -75,7 +75,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(1024, 12);
+            this.button1.Location = new System.Drawing.Point(752, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 33);
             this.button1.TabIndex = 4;
@@ -90,7 +90,7 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(1024, 51);
+            this.groupBox1.Location = new System.Drawing.Point(752, 53);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(134, 44);
             this.groupBox1.TabIndex = 6;
@@ -128,7 +128,7 @@
             this.groupBox2.Controls.Add(this.radioButton4);
             this.groupBox2.Controls.Add(this.radioButton3);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(1024, 101);
+            this.groupBox2.Location = new System.Drawing.Point(752, 103);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(134, 45);
             this.groupBox2.TabIndex = 7;
@@ -167,7 +167,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1024, 426);
+            this.button2.Location = new System.Drawing.Point(752, 428);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(40, 30);
             this.button2.TabIndex = 14;
@@ -182,7 +182,7 @@
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(1070, 426);
+            this.button3.Location = new System.Drawing.Point(798, 428);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(40, 30);
             this.button3.TabIndex = 15;
@@ -197,7 +197,7 @@
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(1118, 426);
+            this.button4.Location = new System.Drawing.Point(846, 428);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(40, 30);
             this.button4.TabIndex = 16;
@@ -213,7 +213,7 @@
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(1024, 264);
+            this.button5.Location = new System.Drawing.Point(752, 266);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(134, 36);
             this.button5.TabIndex = 14;
@@ -229,7 +229,7 @@
             this.groupBox3.Controls.Add(this.checkBox2);
             this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox3.Location = new System.Drawing.Point(1024, 152);
+            this.groupBox3.Location = new System.Drawing.Point(752, 154);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(134, 95);
             this.groupBox3.TabIndex = 17;
@@ -271,7 +271,7 @@
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Location = new System.Drawing.Point(1024, 316);
+            this.button6.Location = new System.Drawing.Point(752, 318);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(134, 36);
             this.button6.TabIndex = 18;
@@ -284,7 +284,7 @@
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.Location = new System.Drawing.Point(1024, 371);
+            this.button7.Location = new System.Drawing.Point(752, 373);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(134, 36);
             this.button7.TabIndex = 19;
@@ -296,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 609);
+            this.ClientSize = new System.Drawing.Size(898, 609);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.groupBox3);
@@ -307,12 +307,12 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxF1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Radar";
             this.Resize += new System.EventHandler(this.Form1_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxF1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -325,7 +325,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxF1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton2;
