@@ -67,7 +67,6 @@ namespace Radar
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
             Airplane.Namber = Convert.ToInt32(textBox1.Text);
             Airplane.Speed = 0.0001f * Convert.ToSingle(textBox6.Text);
             int count = 0;
@@ -78,15 +77,12 @@ namespace Radar
             {
                 count++;
                 double[] ar = polar.Polar(point, h.X, h.Y);
-                
-
             }
             Airplane.Lenght = count;
             Airplane.Trajectory = new double[count, 2];
             count = 0;
             foreach (Point h in list)
             {
-
                 double[] ar = polar.Polar(point, h.X, h.Y);
                 Airplane.Trajectory[count, 0] = ar[0] / km;
                 Airplane.Trajectory[count, 1] = ar[1];
@@ -109,7 +105,6 @@ namespace Radar
             Com.air.Add(air);
             Com.cons++;
             textBox1.Text = Com.cons.ToString();
-
         }
 
         private void PictureBox1_Paint(object sender, PaintEventArgs e)
@@ -196,8 +191,6 @@ namespace Radar
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
             Airplane.vys = Convert.ToDouble(textBox7.Text); pictureBoxTrDr.Refresh(); 
-           
-
         }
 
         private void pictureBoxTrDr_MouseClick(object sender, MouseEventArgs e)
