@@ -13,6 +13,8 @@ namespace Radar
     {
 
         string hi;
+        public TraectoryForm traectoryForm = new TraectoryForm();
+        public PictureBox pictureBox = (PictureBox)TraectoryForm.ActiveForm.Controls.Find("pictureBoxTrDr", false)[0];
 
         public void Line(Graphics e, int width, int height, int scale, bool mar, int Lenght, PointF[] XY, double[,] Trajectory)
         {
@@ -47,8 +49,8 @@ namespace Radar
             PointF centr = new PointF(width / 2, height / 2);
             PolarCoordinate polar = new PolarCoordinate();
             float km = (((float)height) / (scale * 10)) / 2;
-            double radius = polar.Polar(centr, point.X, point.Y)[0];
-            double azimut = polar.Polar(centr, point.X, point.Y)[1];
+            double radius = polar.GetPolar(centr, point.X, point.Y)[0];
+            double azimut = polar.GetPolar(centr, point.X, point.Y)[1];
             float ps = (float)(1 + (radius / 60));
             float pg = (float)(1 + (radius / 60));
             PointF pf1 = polar.Angel(centr, azimut, radius);
@@ -143,7 +145,7 @@ namespace Radar
             PointF point = new PointF(width / 2, height / 2);
             PolarCoordinate polar = new PolarCoordinate();
             PointF pointF = polar.Angel(point, Azimut, Distance);
-            double[] ar = polar.Polar(point, pointF.X, pointF.Y);
+            double[] ar = polar.GetPolar(point, pointF.X, pointF.Y);
             e.DrawString(text + "\n Азимут = " + ar[1].ToString("0") + "\n Дальность = " + (ar[0] / km).ToString("0"), new Font("Arial", 8), Brushes.White, pointF.X + 5, pointF.Y + 5);
             Rectangle re = new Rectangle((int)pointF.X, (int)pointF.Y, 4, 4);
             e.FillPie(Brushes.Red, re, 0, 360);
@@ -158,11 +160,6 @@ namespace Radar
             float SizeEllipse2 = SizeEllipse + 1;
             Rectangle rectangle = new Rectangle((int)(WidthHalf - (SizeEllipse2 * coun) / 2), (int)(HeilghtHalf - (SizeEllipse2 * coun) / 2), (int)(SizeEllipse2 * coun), (int)(SizeEllipse2 * coun));
             if (on == true) { for (int x = 0; x < 360; x += 1) { e.FillPie(new SolidBrush(Color.FromArgb((int)(x * 0.7), 0, 0, 0)), rectangle, -x + angel - 90, 2); } }
-        }
-
-        public void DrawTraectoryPoint(Graphics e, int x, int y, int scale)
-        {
-
         }
 
         public Image Grid(int width, int height, int scale)
@@ -196,6 +193,9 @@ namespace Radar
             return bmp;
         }
 
-         
+        internal static void DrawPoint(double x, double y)
+        {
+            //Graphics Gr = Graphics.FromImage()
+        }
     }
 }

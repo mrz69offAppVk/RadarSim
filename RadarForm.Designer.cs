@@ -32,10 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RadarForm));
             this.pictureBoxF1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxScaleLayout = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxSpeedLayout = new System.Windows.Forms.GroupBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
@@ -43,7 +43,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button5 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBoxViewInfoLayout = new System.Windows.Forms.GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -51,9 +51,9 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxF1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBoxScaleLayout.SuspendLayout();
+            this.groupBoxSpeedLayout.SuspendLayout();
+            this.groupBoxViewInfoLayout.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxF1
@@ -83,19 +83,19 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // groupBox1
+            // groupBoxScaleLayout
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.Color.Black;
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(752, 53);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(134, 44);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Масштаб";
+            this.groupBoxScaleLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxScaleLayout.BackColor = System.Drawing.Color.Black;
+            this.groupBoxScaleLayout.Controls.Add(this.radioButton2);
+            this.groupBoxScaleLayout.Controls.Add(this.radioButton1);
+            this.groupBoxScaleLayout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBoxScaleLayout.Location = new System.Drawing.Point(752, 53);
+            this.groupBoxScaleLayout.Name = "groupBoxScaleLayout";
+            this.groupBoxScaleLayout.Size = new System.Drawing.Size(134, 44);
+            this.groupBoxScaleLayout.TabIndex = 6;
+            this.groupBoxScaleLayout.TabStop = false;
+            this.groupBoxScaleLayout.Text = "Масштаб";
             // 
             // radioButton2
             // 
@@ -121,19 +121,19 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
             // 
-            // groupBox2
+            // groupBoxSpeedLayout
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox2.Controls.Add(this.radioButton4);
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(752, 103);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(134, 45);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Скорость вращения";
+            this.groupBoxSpeedLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxSpeedLayout.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBoxSpeedLayout.Controls.Add(this.radioButton4);
+            this.groupBoxSpeedLayout.Controls.Add(this.radioButton3);
+            this.groupBoxSpeedLayout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBoxSpeedLayout.Location = new System.Drawing.Point(752, 103);
+            this.groupBoxSpeedLayout.Name = "groupBoxSpeedLayout";
+            this.groupBoxSpeedLayout.Size = new System.Drawing.Size(134, 45);
+            this.groupBoxSpeedLayout.TabIndex = 7;
+            this.groupBoxSpeedLayout.TabStop = false;
+            this.groupBoxSpeedLayout.Text = "Скорость вращения";
             // 
             // radioButton4
             // 
@@ -221,20 +221,20 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
-            // groupBox3
+            // groupBoxViewInfoLayout
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.BackColor = System.Drawing.Color.Black;
-            this.groupBox3.Controls.Add(this.checkBox3);
-            this.groupBox3.Controls.Add(this.checkBox2);
-            this.groupBox3.Controls.Add(this.checkBox1);
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox3.Location = new System.Drawing.Point(752, 154);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(134, 95);
-            this.groupBox3.TabIndex = 17;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Показать";
+            this.groupBoxViewInfoLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxViewInfoLayout.BackColor = System.Drawing.Color.Black;
+            this.groupBoxViewInfoLayout.Controls.Add(this.checkBox3);
+            this.groupBoxViewInfoLayout.Controls.Add(this.checkBox2);
+            this.groupBoxViewInfoLayout.Controls.Add(this.checkBox1);
+            this.groupBoxViewInfoLayout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBoxViewInfoLayout.Location = new System.Drawing.Point(752, 154);
+            this.groupBoxViewInfoLayout.Name = "groupBoxViewInfoLayout";
+            this.groupBoxViewInfoLayout.Size = new System.Drawing.Size(134, 95);
+            this.groupBoxViewInfoLayout.TabIndex = 17;
+            this.groupBoxViewInfoLayout.TabStop = false;
+            this.groupBoxViewInfoLayout.Text = "Показать";
             // 
             // checkBox3
             // 
@@ -292,33 +292,33 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
-            // Form1
+            // RadarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(898, 609);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBoxViewInfoLayout);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxSpeedLayout);
+            this.Controls.Add(this.groupBoxScaleLayout);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBoxF1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "RadarForm";
             this.Text = "Radar";
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxF1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBoxScaleLayout.ResumeLayout(false);
+            this.groupBoxScaleLayout.PerformLayout();
+            this.groupBoxSpeedLayout.ResumeLayout(false);
+            this.groupBoxSpeedLayout.PerformLayout();
+            this.groupBoxViewInfoLayout.ResumeLayout(false);
+            this.groupBoxViewInfoLayout.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -327,10 +327,10 @@
 
         private System.Windows.Forms.PictureBox pictureBoxF1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxScaleLayout;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxSpeedLayout;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Button button2;
@@ -338,7 +338,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBoxViewInfoLayout;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox3;

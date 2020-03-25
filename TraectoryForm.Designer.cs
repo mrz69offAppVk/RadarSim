@@ -256,6 +256,9 @@
             this.pictureBoxTrDr.TabStop = false;
             this.pictureBoxTrDr.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxTrDr_Paint);
             this.pictureBoxTrDr.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxTrDr_MouseClick);
+            this.pictureBoxTrDr.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBoxTrDr_MouseDown);
+            this.pictureBoxTrDr.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBoxTrDr_MouseMove);
+            this.pictureBoxTrDr.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBoxTrDr_MouseUp);
             // 
             // button1
             // 
@@ -289,7 +292,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TraectoryForm";
             this.Text = "Новый объект";
             this.groupBox1.ResumeLayout(false);

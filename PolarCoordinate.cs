@@ -33,23 +33,24 @@ namespace Radar
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <returns></returns>
-        public double[] Polar(PointF Centr, double x, double y)
+        public double[] GetPolar(PointF Centr, double x, double y)
         {
-            double[] pc = new double[2];
+            double[] polarCoordinate = new double[2];
             double x2;
             double y2;
             double px = x - Centr.X;
             double py = y - Centr.Y;
             double af = 360.0 / 628.0;
-            pc[0] = Math.Sqrt((px * px) + (py *py));
+            polarCoordinate[0] = Math.Sqrt((px * px) + (py *py));
             for (int a = 0; a < 628; a++)
             {
-                y2 = (Math.Sin((a+471 )* 0.01) * pc[0]) + Centr.Y;
-                x2 = (Math.Cos((a+471 ) * 0.01) * pc[0]) + Centr.X;
-                if (x2 < x + 2 && x2 > x - 2 && y2 < y + 2 && y2 > y - 2) { pc[1] = af * a; break; }
+                y2 = (Math.Sin((a+471 )* 0.01) * polarCoordinate[0]) + Centr.Y;
+                x2 = (Math.Cos((a+471 ) * 0.01) * polarCoordinate[0]) + Centr.X;
+                if (x2 < x + 2 && x2 > x - 2 && y2 < y + 2 && y2 > y - 2) { polarCoordinate[1] = af * a; break; }
             }
-            return pc;
+            return polarCoordinate;
         }
+
         /// <summary>
         /// Возврощает длину в км из массива 
         /// </summary>
@@ -111,9 +112,7 @@ namespace Radar
                 ham[cou] = a;
                 cou++;
             }
-
             return ham;
         }
-
     }
 }
