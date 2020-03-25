@@ -107,7 +107,7 @@ namespace Radar
             textBox1.Text = Com.cons.ToString();
         }
 
-        private void PictureBox1_Paint(object sender, PaintEventArgs e)
+        private void PictureBoxTrDr_Paint(object sender, PaintEventArgs e)
         {
             RadarDraw radar = new RadarDraw();
             if (Airplane.StartAzimuth != o && Airplane.StartDistance != o) { radar.Point(e.Graphics, pictureBoxTrDr.Width, pictureBoxTrDr.Height, 15, Airplane.StartAzimuth, Airplane.StartDistance, "Начало координат"); }

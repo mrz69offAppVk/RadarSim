@@ -254,7 +254,7 @@
             this.pictureBoxTrDr.Size = new System.Drawing.Size(550, 559);
             this.pictureBoxTrDr.TabIndex = 0;
             this.pictureBoxTrDr.TabStop = false;
-            this.pictureBoxTrDr.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox1_Paint);
+            this.pictureBoxTrDr.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxTrDr_Paint);
             this.pictureBoxTrDr.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxTrDr_MouseClick);
             // 
             // button1
