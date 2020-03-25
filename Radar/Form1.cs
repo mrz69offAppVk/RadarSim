@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Radar
 {
-    public partial class RadarForm : Form
+    public partial class Form1 : Form
     {
-        public RadarForm()
+        public Form1()
         {
             InitializeComponent();
             timer1.Start();
@@ -24,6 +24,7 @@ namespace Radar
         int posX, posY;
         bool on = true;
         bool pop = true;
+       
         int ag = 3;
         float cx, cy;
         PointF[] CorX;
@@ -35,35 +36,47 @@ namespace Radar
         double[] percent;
         double[] min;
         double[] max;
-        int a1 = 0, a2 = 0, a3 = 0, a4 = 0; Bitmap memoryImage;
-        private void PictureBoxF1_Paint(object sender, PaintEventArgs e)
+        int a1 = 0,a2 = 0,a3 = 0,a4=0; Bitmap memoryImage;
+        private void PictureBox1_Paint(object sender, PaintEventArgs e)
         {
             DoubleBuffered = true;
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            RadarDraw radar = new RadarDraw();
-            e.Graphics.DrawString("Количество целей : " + Com.cons, new Font("Arial", 8), Brushes.White, 10, 10);
-            e.Graphics.DrawString("Время " + DateTime.Now.Hour + " : " + DateTime.Now.Minute + " : " + DateTime.Now.Second.ToString(), new Font("Arial", 8), Brushes.White, 10, 25);
-            if (ok == true)
-            {
-                a1 = 0;
-                foreach (Air air in Com.air)
+
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                RadarDraw radar = new RadarDraw();
+
+                e.Graphics.DrawString("Количество целей : " + Com.cons, new Font("Arial", 8), Brushes.White, 10, 10);
+                e.Graphics.DrawString("Время " + DateTime.Now.Hour + " : " + DateTime.Now.Minute + " : " + DateTime.Now.Second.ToString(), new Font("Arial", 8), Brushes.White, 10, 25);
+
+                if (ok == true)
                 {
-                    radar.His(e.Graphics, pictureBoxF1.Width, pictureBoxF1.Height, scale, CorX[a1], checkBox2.Checked, checkBox3.Checked, air.His, air.Namber, a, a1, sd, air.vys);
-                    radar.Line(e.Graphics, pictureBoxF1.Width, pictureBoxF1.Height, scale, checkBox1.Checked, air.Lenght, air.XY, air.Trajectory);
-                    a1++;
+                    a1 = 0;
+                    foreach (Air air in Com.air)
+                    {
+
+                        radar.His(e.Graphics, pictureBox1.Width, pictureBox1.Height, scale, CorX[a1], checkBox2.Checked, checkBox3.Checked, air.His, air.Namber, a, a1, sd);
+                        radar.Line(e.Graphics, pictureBox1.Width, pictureBox1.Height, scale, checkBox1.Checked, air.Lenght, air.XY, air.Trajectory);
+                        a1++;
+
+                    }
+
                 }
-            }
-            radar.Draw(e.Graphics, pictureBoxF1.Width, pictureBoxF1.Height, a, scale, on);
+                radar.Draw(e.Graphics, pictureBox1.Width, pictureBox1.Height, a, scale, on);
+
+
+
+
         }
-        void DrawingGrid() { RadarDraw radar = new RadarDraw(); pictureBoxF1.Image = radar.Grid(pictureBoxF1.Width, pictureBoxF1.Height, scale); }
+        void DrawingGrid() {  RadarDraw radar = new RadarDraw();pictureBox1.Image = radar.Grid(pictureBox1.Width, pictureBox1.Height, scale); }
         private void PictureBox1_Resize(object sender, EventArgs e)
         {
-            pictureBoxF1.Refresh();
+         
+            pictureBox1.Refresh();
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            a += ag; if (a >= 360) { a = 0; }
+            a+=ag;if (a >= 360) { a = 0; }
             if (ok == true)
             {
                 CorX = new PointF[Com.cons];
@@ -75,7 +88,7 @@ namespace Radar
                     a3++;
                 }
             }
-            pictureBoxF1.Refresh(); sd = false;
+            pictureBox1.Refresh();sd = false;
         }
 
         private void RadioButton4_CheckedChanged(object sender, EventArgs e)
@@ -85,12 +98,12 @@ namespace Radar
 
         private void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            scale = 7; DrawingGrid(); instal();
+            scale = 7; DrawingGrid(); instal(); 
         }
 
         private void RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            scale = 15; DrawingGrid(); instal();
+            scale = 15; DrawingGrid(); instal(); 
         }
 
         private void RadioButton3_CheckedChanged(object sender, EventArgs e)
@@ -100,7 +113,7 @@ namespace Radar
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            timer1.Start(); if (on == true) { } else { on = true; }
+            timer1.Start(); if (on == true) {  } else { on = true; }
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -110,22 +123,23 @@ namespace Radar
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            if (on == true) { on = false; } else { }
-            pictureBoxF1.Refresh(); timer1.Stop();
+            if (on == true) { on = false; } else {  }
+            pictureBox1.Refresh(); timer1.Stop();
         }
 
         void instal()
         {
             PolarCoordinate polar = new PolarCoordinate();
-            a2 = 0; buf = new List<PointF[]>();
+            a2 = 0;buf = new List<PointF[]>();
             foreach (Air air in Com.air)
-            {
-                buf.Add(polar.XY(air.Trajectory, pictureBoxF1.Width, pictureBoxF1.Height, scale, air.Lenght, air.Speed));
-                min[a2] = polar.XY(air.Trajectory, pictureBoxF1.Width, pictureBoxF1.Height, scale, air.Lenght, air.Speed).Length;
+            { 
+                buf.Add ( polar.XY(air.Trajectory, pictureBox1.Width, pictureBox1.Height, scale,air.Lenght,air.Speed));
+                min[a2] = polar.XY(air.Trajectory, pictureBox1.Width, pictureBox1.Height, scale, air.Lenght, air.Speed).Length;
                 percent[a2] = 100 / min[a2];
                 cone[a2] = (int)(max[a2] / percent[a2]);
                 a2++;
             }
+           
             ok = true; sd = true;
         }
 
@@ -133,34 +147,38 @@ namespace Radar
         {
             checkBox1.Checked = true; checkBox2.Checked = true; checkBox3.Checked = true;
             if (on == true) { on = false; } else { }
-            pictureBoxF1.Refresh(); timer1.Stop();
+            pictureBox1.Refresh(); timer1.Stop();
             saveFileDialog1.FileName = "Полет 1";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK) { Thread.Sleep(200); }
-            Graphics myGraphics = this.CreateGraphics();
+                Graphics myGraphics = this.CreateGraphics();
             Size s = this.Size;
             memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
             Graphics memoryGraphics = Graphics.FromImage(memoryImage);
             memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
+
             memoryImage.Save(saveFileDialog1.FileName + ".jpg");
+
             timer1.Start(); if (on == true) { } else { on = true; }
             checkBox1.Checked = false; checkBox2.Checked = false; checkBox3.Checked = false;
         }
 
         private void Button6_Click(object sender, EventArgs e)
-        {
-            string stop = "";
+        {   string stop="";
             timer1.Stop();
             saveFileDialog1.FileName = "Полет 1";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                for (int s = 0; s < Coma.cs; s += Com.cons)
-                {
-                    if (s != 0) { stop += Coma.cv + "\r\n" + Coma.file[s].Remove(Coma.file[s].Length - 2) + "/" + "\r\n"; }
+
+            for(int s = 0; s < Coma.cs; s+=Com.cons)
+            {
+                    if (s != 0) { stop += Coma.cv + "\r\n" + Coma.file[s].Remove(Coma.file[s].Length-2) + "/" + "\r\n"; }
                     Coma.cv++;
-                }
-                System.IO.File.WriteAllText(saveFileDialog1.FileName + ".txt", stop);
+            }
+            System.IO.File.WriteAllText(saveFileDialog1.FileName+".txt", stop);
             }
         }
+
+
 
         private void Button5_Click(object sender, EventArgs e)
         {
@@ -171,7 +189,6 @@ namespace Radar
             Coma.radius = new double[Com.cons];
             Coma.text = new string[100];
             Coma.file = new string[1000];
-            Coma.vys = new double[Com.cons];
             cone = new int[Com.cons];
             percent = new double[Com.cons];
             max = new double[Com.cons];
@@ -183,7 +200,7 @@ namespace Radar
         private void Button1_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            TraectoryForm newForm = new TraectoryForm();
+            Form2 newForm = new Form2();
             newForm.Show();
         }
 
@@ -192,7 +209,7 @@ namespace Radar
             DrawingGrid(); instal();
         }
 
-        private void PictureBoxF1_MouseMove(object sender, MouseEventArgs e)
+        private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             posX = e.X; posY = e.Y;
         }

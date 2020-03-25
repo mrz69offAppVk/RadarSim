@@ -18,6 +18,7 @@ namespace Radar
         /// <returns></returns>
         public PointF Angel(PointF Centr,double angel,double radius)
         {
+            
             double X, Y;
             double Step = ((Math.PI*200) / 360.0) * (angel-90);
             Y = (Math.Sin(Step * 0.01) * radius) + Centr.Y;
@@ -25,7 +26,6 @@ namespace Radar
             PointF pointF = new PointF((float)X,(float) Y);
             return pointF;
         }
-
         /// <summary>
         /// Функция возвращает [0] радиус [1] угол по кординатам Х У
         /// </summary>
@@ -50,7 +50,6 @@ namespace Radar
             }
             return pc;
         }
-
         /// <summary>
         /// Возврощает длину в км из массива 
         /// </summary>
@@ -116,5 +115,6 @@ namespace Radar
 
             return ham;
         }
+
     }
 }

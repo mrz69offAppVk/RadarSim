@@ -1,0 +1,75 @@
+C:\Users\Владимир\source\repos\Radar\Radar\bin\Debug\Radar.exe.config
+C:\Users\Владимир\source\repos\Radar\Radar\bin\Debug\Radar.exe
+C:\Users\Владимир\source\repos\Radar\Radar\bin\Debug\Radar.pdb
+C:\Users\Владимир\source\repos\Radar\Radar\obj\Debug\Radar.csprojAssemblyReference.cache
+C:\Users\Владимир\source\repos\Radar\Radar\obj\Debug\Radar.Form1.resources
+C:\Users\Владимир\source\repos\Radar\Radar\obj\Debug\Radar.Properties.Resources.resources
+C:\Users\Владимир\source\repos\Radar\Radar\obj\Debug\Radar.csproj.GenerateResource.cache
+C:\Users\Владимир\source\repos\Radar\Radar\obj\Debug\Radar.csproj.CoreCompileInputs.cache
+C:\Users\Владимир\source\repos\Radar\Radar\obj\Debug\Radar.exe
+C:\Users\Владимир\source\repos\Radar\Radar\obj\Debug\Radar.pdb
+C:\Users\Владимир\source\repos\Radar\Radar\obj\Debug\Radar.Form2.resources
+G:\Radar\Radar\bin\Debug\Radar.exe.config
+G:\Radar\Radar\bin\Debug\Radar.exe
+G:\Radar\Radar\bin\Debug\Radar.pdb
+G:\Radar\Radar\obj\Debug\Radar.csprojAssemblyReference.cache
+G:\Radar\Radar\obj\Debug\Radar.Form1.resources
+G:\Radar\Radar\obj\Debug\Radar.Form2.resources
+G:\Radar\Radar\obj\Debug\Radar.Properties.Resources.resources
+G:\Radar\Radar\obj\Debug\Radar.csproj.GenerateResource.cache
+G:\Radar\Radar\obj\Debug\Radar.csproj.CoreCompileInputs.cache
+G:\Radar\Radar\obj\Debug\Radar.exe
+G:\Radar\Radar\obj\Debug\Radar.pdb
+E:\Диплом\Radar\Radar\bin\Debug\Radar.exe.config
+E:\Диплом\Radar\Radar\bin\Debug\Radar.exe
+E:\Диплом\Radar\Radar\bin\Debug\Radar.pdb
+E:\Диплом\Radar\Radar\obj\Debug\Radar.csprojAssemblyReference.cache
+E:\Диплом\Radar\Radar\obj\Debug\Radar.Form1.resources
+E:\Диплом\Radar\Radar\obj\Debug\Radar.Form2.resources
+E:\Диплом\Radar\Radar\obj\Debug\Radar.Properties.Resources.resources
+E:\Диплом\Radar\Radar\obj\Debug\Radar.csproj.GenerateResource.cache
+E:\Диплом\Radar\Radar\obj\Debug\Radar.exe
+E:\Диплом\Radar\Radar\obj\Debug\Radar.pdb
+E:\Диплом\Новая папка\Radar\bin\Debug\Radar.exe.config
+E:\Диплом\Новая папка\Radar\bin\Debug\Radar.exe
+E:\Диплом\Новая папка\Radar\bin\Debug\Radar.pdb
+E:\Диплом\Новая папка\Radar\obj\Debug\Radar.csprojAssemblyReference.cache
+E:\Диплом\Новая папка\Radar\obj\Debug\Radar.Form1.resources
+E:\Диплом\Новая папка\Radar\obj\Debug\Radar.Form2.resources
+E:\Диплом\Новая папка\Radar\obj\Debug\Radar.Properties.Resources.resources
+E:\Диплом\Новая папка\Radar\obj\Debug\Radar.csproj.GenerateResource.cache
+E:\Диплом\Новая папка\Radar\obj\Debug\Radar.exe
+E:\Диплом\Новая папка\Radar\obj\Debug\Radar.pdb
+C:\Users\moroz69off\Downloads\Radar+\Radar допилен\bin\Debug\Radar.exe.config
+C:\Users\moroz69off\Downloads\Radar+\Radar допилен\bin\Debug\Radar.exe
+C:\Users\moroz69off\Downloads\Radar+\Radar допилен\bin\Debug\Radar.pdb
+C:\Users\moroz69off\Downloads\Radar+\Radar допилен\obj\Debug\Radar.csprojAssemblyReference.cache
+C:\Users\moroz69off\Downloads\Radar+\Radar допилен\obj\Debug\Radar.Properties.Resources.resources
+C:\Users\moroz69off\Downloads\Radar+\Radar допилен\obj\Debug\Radar.csproj.GenerateResource.cache
+C:\Users\moroz69off\Downloads\Radar+\Radar допилен\obj\Debug\Radar.csproj.CoreCompileInputs.cache
+C:\Users\moroz69off\Downloads\Radar+\Radar допилен\obj\Debug\Radar.exe
+C:\Users\moroz69off\Downloads\Radar+\Radar допилен\obj\Debug\Radar.pdb
+C:\Users\moroz69off\Downloads\Radar+\Radar допилен\obj\Debug\Radar.FormRadar.resources
+C:\Users\moroz69off\Downloads\Radar+\Radar допилен\obj\Debug\Radar.FormTarget.resources
+C:\Users\moroz69off\source\repos\RadarSim2\bin\Debug\Radar.exe.config
+C:\Users\moroz69off\source\repos\RadarSim2\bin\Debug\Radar.exe
+C:\Users\moroz69off\source\repos\RadarSim2\bin\Debug\Radar.pdb
+C:\Users\moroz69off\source\repos\RadarSim2\obj\Debug\Radar.csprojAssemblyReference.cache
+C:\Users\moroz69off\source\repos\RadarSim2\obj\Debug\Radar.FormRadar.resources
+C:\Users\moroz69off\source\repos\RadarSim2\obj\Debug\Radar.FormTarget.resources
+C:\Users\moroz69off\source\repos\RadarSim2\obj\Debug\Radar.Properties.Resources.resources
+C:\Users\moroz69off\source\repos\RadarSim2\obj\Debug\Radar.csproj.GenerateResource.cache
+C:\Users\moroz69off\source\repos\RadarSim2\obj\Debug\Radar.csproj.CoreCompileInputs.cache
+C:\Users\moroz69off\source\repos\RadarSim2\obj\Debug\Radar.exe
+C:\Users\moroz69off\source\repos\RadarSim2\obj\Debug\Radar.pdb
+C:\Users\moroz69off\source\repos\RadarSim\bin\Debug\Radar.exe.config
+C:\Users\moroz69off\source\repos\RadarSim\bin\Debug\Radar.exe
+C:\Users\moroz69off\source\repos\RadarSim\bin\Debug\Radar.pdb
+C:\Users\moroz69off\source\repos\RadarSim\obj\Debug\Radar.csprojAssemblyReference.cache
+C:\Users\moroz69off\source\repos\RadarSim\obj\Debug\Radar.FormRadar.resources
+C:\Users\moroz69off\source\repos\RadarSim\obj\Debug\Radar.FormTarget.resources
+C:\Users\moroz69off\source\repos\RadarSim\obj\Debug\Radar.Properties.Resources.resources
+C:\Users\moroz69off\source\repos\RadarSim\obj\Debug\Radar.csproj.GenerateResource.cache
+C:\Users\moroz69off\source\repos\RadarSim\obj\Debug\Radar.csproj.CoreCompileInputs.cache
+C:\Users\moroz69off\source\repos\RadarSim\obj\Debug\Radar.exe
+C:\Users\moroz69off\source\repos\RadarSim\obj\Debug\Radar.pdb

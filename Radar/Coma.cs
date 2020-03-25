@@ -1,4 +1,9 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Radar
 {
@@ -11,8 +16,7 @@ namespace Radar
         public static double[] azimut;
         public static string[] text;
         public static string[] file;
-        public static int cv;
-        public static int cs;
-        public static double[] vys;
+        public static int cv ;
+        public static int cs ;
     }
 }

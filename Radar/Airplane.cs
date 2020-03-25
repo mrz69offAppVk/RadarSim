@@ -22,6 +22,5 @@ namespace Radar
        static public double[,] Trajectory;
        static public PointF[] XY;
        static public double Distance;
-        static public double  vys;
     }
 }

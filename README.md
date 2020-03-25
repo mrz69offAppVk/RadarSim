@@ -1,2 +1,0 @@
-# RadarSim
-Simulation air radar
