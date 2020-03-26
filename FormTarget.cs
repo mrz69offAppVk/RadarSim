@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,29 +13,33 @@ namespace Radar
 {
     public partial class FormTarget : Form
     {
+        Graphics GRAPH;
         public FormTarget()
         {
             InitializeComponent();
-            image = pictureBoxTarget.Image;
             DrawingGrid();
         }
         void DrawingGrid() {
             RadarDraw radar = new RadarDraw();
             pictureBoxTarget.BackgroundImage = radar.Grid(pictureBoxTarget.Width, pictureBoxTarget.Height, 15);
+            pictureBoxTarget.Image = pictureBoxTarget.BackgroundImage;
+            image = pictureBoxTarget.Image;
+            GRAPH = Graphics.FromImage(image);
         }
 
         List<Point> list = new List<Point>();
         bool flag = false;
         bool targetStarted = false; // этот флаг обозначает что начата прокладка курса и клики должны обрабатываться добавлением точек в лист
-        double o;
+        double oAzimut;
         int ex;
         int ey;
         Image image;
         private bool targetEnd = false; // этот флаг обозначает, что последний клик по картинке завершает создание цели
+        int targetObjectNumber = 0; // Нумерация создаваемых целей
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            Airplane.Namber = Convert.ToInt32(textBox1.Text);
+            Airplane.Namber = Convert.ToInt32(textBoxTargetNum.Text);
             Airplane.Speed = 0.0001f * Convert.ToSingle(textBox6.Text);
             int count = 0;
             PointF point = new PointF(pictureBoxTarget.Width / 2, pictureBoxTarget.Height / 2);
@@ -71,29 +76,32 @@ namespace Radar
             //air.StartDistance = Airplane.StartDistance;
             Com.air.Add(air);
             Com.cons++;
-            textBox1.Text = Com.cons.ToString();
+            textBoxTargetNum.Text = Com.cons.ToString();
         }
 
         private void PictureBoxTarget_Paint(object sender, PaintEventArgs e)
         {
             RadarDraw radar = new RadarDraw();
-            if (Airplane.StartAzimuth != o && Airplane.StartDistance != o) { radar.Point(e.Graphics, pictureBoxTarget.Width, pictureBoxTarget.Height, 15, Airplane.StartAzimuth, Airplane.StartDistance, "Начало координат"); }
-            if (Airplane.EndAzimuth != o && Airplane.EndDistance != o) { radar.Point(e.Graphics, pictureBoxTarget.Width, pictureBoxTarget.Height, 15, Airplane.EndAzimuth, Airplane.EndDistance, "Конец координат"); }
+            if (Airplane.StartAzimuth != oAzimut && Airplane.StartDistance != oAzimut)
+            {
+                radar.Point(e.Graphics, pictureBoxTarget.Width, pictureBoxTarget.Height, 15, Airplane.StartAzimuth, Airplane.StartDistance, "Начало координат");
+            }
+            if (Airplane.EndAzimuth != oAzimut && Airplane.EndDistance != oAzimut) { radar.Point(e.Graphics, pictureBoxTarget.Width, pictureBoxTarget.Height, 15, Airplane.EndAzimuth, Airplane.EndDistance, "Конец координат"); }
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            Airplane.Namber = Convert.ToInt32(textBox1.Text);pictureBoxTarget.Refresh();
+            Airplane.Namber = Convert.ToInt32(textBoxTargetNum.Text);pictureBoxTarget.Refresh();
         }
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {
-            Airplane.StartAzimuth = Convert.ToDouble(textBox2.Text); pictureBoxTarget.Refresh();
+            Airplane.StartAzimuth = Convert.ToDouble(textBoxAzimut.Text); pictureBoxTarget.Refresh();
         }
 
         private void TextBox3_TextChanged(object sender, EventArgs e)
         {
-            Airplane.StartDistance = Convert.ToDouble(textBox3.Text); pictureBoxTarget.Refresh();
+            Airplane.StartDistance = Convert.ToDouble(textBoxDistance.Text); pictureBoxTarget.Refresh();
         }
 
         private void TextBox4_TextChanged(object sender, EventArgs e)
@@ -213,6 +221,7 @@ namespace Radar
 
         private void TargetStart(MouseEventArgs e)
         {
+            targetObjectNumber++;
             list = new List<Point>(); flag = false;
             float km = (((float)pictureBoxTarget.Height) / (15 * 10)) / 2;
             PointF point = new PointF(pictureBoxTarget.Width / 2, pictureBoxTarget.Height / 2);
@@ -222,15 +231,29 @@ namespace Radar
             Airplane.StartDistance = ar[0] / km;
             Point targetPoint = new Point(e.X, e.Y);
             list.Add(targetPoint);
-            textBox2.Text = Airplane.StartAzimuth.ToString();
-            textBox3.Text = Airplane.StartDistance.ToString();
+            textBoxAzimut.Text = Airplane.StartAzimuth.ToString();
+            textBoxDistance.Text = Airplane.StartDistance.ToString();
             targetStarted = true;
         }
         private void TargetContinue(MouseEventArgs e)
         {
-
+            RadarDraw RD = new RadarDraw();
+            //flag = false;
+            float km = (((float)pictureBoxTarget.Height) / (15 * 10)) / 2;
+            PointF point = new PointF(pictureBoxTarget.Width / 2, pictureBoxTarget.Height / 2);
+            PolarCoordinate polar = new PolarCoordinate();
+            double[] ar = polar.Polar(point, e.X, e.Y);
+            Airplane.StartAzimuth = ar[1];
+            Airplane.StartDistance = ar[0] / km;
             Point targetPoint = new Point(e.X, e.Y);
+            string targetPointString = targetPoint.X.ToString() + ' ' + targetPoint.Y.ToString() + '\n';
+            File.AppendAllText($"target{targetObjectNumber}.ini", targetPointString);
             list.Add(targetPoint);
+            if (list.Count > 1)
+                { RadarDraw.DrawLines(GRAPH, list); }
+            textBoxAzimut.Text = Airplane.StartAzimuth.ToString();
+            textBoxDistance.Text = Airplane.StartDistance.ToString();
+
         }
         #endregion mouse event
     }

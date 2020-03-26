@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTarget));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxTargetNum = new System.Windows.Forms.TextBox();
+            this.textBoxAzimut = new System.Windows.Forms.TextBox();
+            this.textBoxDistance = new System.Windows.Forms.TextBox();
+            this.groupBoxPolarInfo = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -51,7 +51,7 @@
             this.pictureBoxTarget = new System.Windows.Forms.PictureBox();
             this.buttonAddTarget = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxPolarInfo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTarget)).BeginInit();
@@ -76,43 +76,43 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Дальность";
             // 
-            // textBox1
+            // textBoxTargetNum
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "0";
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.textBoxTargetNum.Location = new System.Drawing.Point(6, 19);
+            this.textBoxTargetNum.Name = "textBoxTargetNum";
+            this.textBoxTargetNum.Size = new System.Drawing.Size(137, 20);
+            this.textBoxTargetNum.TabIndex = 6;
+            this.textBoxTargetNum.Text = "0";
+            this.textBoxTargetNum.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
-            // textBox2
+            // textBoxAzimut
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 20);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
+            this.textBoxAzimut.Location = new System.Drawing.Point(6, 32);
+            this.textBoxAzimut.Name = "textBoxAzimut";
+            this.textBoxAzimut.Size = new System.Drawing.Size(137, 20);
+            this.textBoxAzimut.TabIndex = 7;
+            this.textBoxAzimut.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
-            // textBox3
+            // textBoxDistance
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(137, 20);
-            this.textBox3.TabIndex = 8;
-            this.textBox3.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
+            this.textBoxDistance.Location = new System.Drawing.Point(6, 84);
+            this.textBoxDistance.Name = "textBoxDistance";
+            this.textBoxDistance.Size = new System.Drawing.Size(137, 20);
+            this.textBoxDistance.TabIndex = 8;
+            this.textBoxDistance.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
             // 
-            // groupBox1
+            // groupBoxPolarInfo
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 63);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(160, 113);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Начало координат";
+            this.groupBoxPolarInfo.Controls.Add(this.textBoxAzimut);
+            this.groupBoxPolarInfo.Controls.Add(this.label2);
+            this.groupBoxPolarInfo.Controls.Add(this.textBoxDistance);
+            this.groupBoxPolarInfo.Controls.Add(this.label3);
+            this.groupBoxPolarInfo.Location = new System.Drawing.Point(12, 63);
+            this.groupBoxPolarInfo.Name = "groupBoxPolarInfo";
+            this.groupBoxPolarInfo.Size = new System.Drawing.Size(160, 113);
+            this.groupBoxPolarInfo.TabIndex = 11;
+            this.groupBoxPolarInfo.TabStop = false;
+            this.groupBoxPolarInfo.Text = "Начало координат";
             // 
             // groupBox2
             // 
@@ -268,7 +268,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.textBoxTargetNum);
             this.groupBox5.Location = new System.Drawing.Point(12, 12);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(160, 45);
@@ -286,13 +286,13 @@
             this.Controls.Add(this.buttonAddTarget);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxPolarInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTarget";
             this.Text = "Новый объект";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxPolarInfo.ResumeLayout(false);
+            this.groupBoxPolarInfo.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -307,10 +307,10 @@
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBoxTargetNum;
+        private System.Windows.Forms.TextBox textBoxAzimut;
+        private System.Windows.Forms.TextBox textBoxDistance;
+        private System.Windows.Forms.GroupBox groupBoxPolarInfo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;

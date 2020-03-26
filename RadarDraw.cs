@@ -12,11 +12,6 @@ namespace Radar
     class RadarDraw
     {
         string hi;
-        //static FormTarget FT = new FormTarget();
-        //static PictureBox pictureBox = (PictureBox)FT.Controls.Find("", false)[0];
-        //static Image image = pictureBox.Image;
-        //static Graphics GRAPH = Graphics.FromImage(image);
-        //static Brush brush_RED = Brushes.Red;
 
         public void Line(Graphics e, int width, int height, int scale, bool mar, int Lenght , PointF[] XY,double[,] Trajectory)
         {
@@ -110,9 +105,9 @@ namespace Radar
             PolarCoordinate polar = new PolarCoordinate();
             PointF pointF = polar.Angel(point, Azimut, Distance);
             double[] ar = polar.Polar(point, pointF.X, pointF.Y);
-            e.DrawString(text+"\n Азимут = " + ar[1].ToString("0")+"\n Дальность = " + (ar[0] / km).ToString("0")  , new Font("Arial", 8), Brushes.White, pointF.X+5, pointF.Y+5);
-            Rectangle re = new Rectangle((int)pointF.X,(int)pointF.Y, 4, 4);
-            e.FillPie(Brushes.Red, re,0,360);
+            //e.DrawString(text+"\n Азимут = " + ar[1].ToString("0")+"\n Дальность = " + (ar[0] / km).ToString("0")  , new Font("Arial", 8), Brushes.White, pointF.X+5, pointF.Y+5);
+            Rectangle rectangle = new Rectangle((int)pointF.X,(int)pointF.Y, 7, 7);
+            e.FillPie(Brushes.Red, rectangle,0,360);
         }
         public void Draw(Graphics e, int width, int height,float angel,int scale,bool on)
         { 
@@ -170,63 +165,18 @@ namespace Radar
             return bmp;
         }
 
-//public Image Scrin(int width, int height, int scale, PointF point, bool mar, bool mar1, bool his, int nam, float a, int a1, bool sd)
-        //{
-        //    Bitmap bmp = new Bitmap(width, height);
-        //    Graphics g = Graphics.FromImage(bmp);
-        //    g.SmoothingMode = SmoothingMode.AntiAlias;
-        //    AllColor all = new AllColor();
-        //    int coun = scale;
-        //    float SizeEllipse = height / coun;
-        //    float WidthHalf = width / 2;
-        //    float HeilghtHalf = height / 2;
-        //    int ste = 0; int can = 0;
-        //    for (float x = 0; x < SizeEllipse * coun; x += SizeEllipse)
-        //    {
-        //        ste++;
-        //        RectangleF r = new RectangleF(WidthHalf - (SizeEllipse + x) / 2, HeilghtHalf - (SizeEllipse + x) / 2, SizeEllipse + x, SizeEllipse + x);
-        //        if (ste == 5) { g.DrawEllipse(new Pen(all.colors[1], 1), r); ste = 0; } else { g.DrawEllipse(new Pen(all.colors[0], 1), r); }
-        //        if (x == 0) { g.DrawEllipse(new Pen(all.colors[1], 1), r); }
-        //    }
-        //    float x1 = 0, y1 = 0, x3 = 0, y3 = 0;
-        //    for (float i = 0; i < Math.PI * 20; i += (float)Math.PI)
-        //    {
-        //        can++;
-        //        x1 = WidthHalf + (float)Math.Cos(i * 0.1) * SizeEllipse / 2;
-        //        y1 = HeilghtHalf + (float)Math.Sin(i * 0.1) * SizeEllipse / 2;
-        //        x3 = WidthHalf + (float)Math.Cos(i * 0.1) * SizeEllipse * coun / 2;
-        //        y3 = HeilghtHalf + (float)Math.Sin(i * 0.1) * SizeEllipse * coun / 2;
-        //        if (can == 2) { g.DrawLine(new Pen(all.colors[1], 1), x1, y1, x3, y3); can = 0; } else { g.DrawLine(new Pen(all.colors[0], 1), x1, y1, x3, y3); }
-        //    }
-        //    PointF centr = new PointF(width / 2, height / 2);
-        //    PolarCoordinate polar = new PolarCoordinate();
-        //    float km = (((float)height) / (scale * 10)) / 2;
-        //    double radius = polar.Polar(centr, point.X, point.Y)[0];
-        //    double azimut = polar.Polar(centr, point.X, point.Y)[1];
-        //    float ps = (float)(1 + (radius / 60));
-        //    float pg = (float)(1 + (radius / 60));
-        //    PointF pf1 = polar.Angel(centr, azimut, radius);
-        //    PointF pf2 = polar.Angel(centr, azimut, radius + ps);
-        //    PointF pf4 = polar.Angel(centr, azimut, radius + ps - pg * 2);
-        //    float pe = (float)(10 + (radius / 20));
-        //    float pe1 = (float)(5 + (radius / 20));
-        //    if (a < azimut + 3 && a > azimut - 3)
-        //    {
-        //        Coma.pf1[a1] = pf1; Coma.pf2[a1] = pf2; Coma.pf4[a1] = pf4; Coma.azimut[a1] = azimut; Coma.radius[a1] = radius;
-        //        if (his == true) { hi = "0"; } else { hi = "1"; }
-
-        //        Coma.text[a1] += Coma.azimut[a1].ToString("0.000") + "," + (Coma.radius[a1] / km).ToString("0.000") + "," + hi + ";";
-        //    }
-        //    if (sd == true) { Coma.pf1[a1] = pf1; Coma.pf2[a1] = pf2; Coma.pf4[a1] = pf4; Coma.azimut[a1] = azimut; Coma.radius[a1] = radius; }
-        //    if (Coma.radius[a1] / km < 150 && Coma.radius[a1] / km > 15)
-        //    {
-        //        g.DrawLine(new Pen(Color.FromArgb(255, 170, 130, 0), pe), Coma.pf1[a1].X, Coma.pf1[a1].Y, Coma.pf2[a1].X, Coma.pf2[a1].Y);
-        //        if (his == true) { g.DrawLine(new Pen(Color.FromArgb(255, 170, 130, 0), pe1), Coma.pf1[a1].X, Coma.pf1[a1].Y, Coma.pf4[a1].X, Coma.pf4[a1].Y); }
-        //    }
-        //    g.DrawString(nam + " ) " + "Азимут " + Coma.azimut[a1].ToString("0.000") + "  " + "Далность " + (Coma.radius[a1] / km).ToString("0.000"), new Font("Arial", 8), Brushes.White, 10, 40 + (nam * 15));
-        //    g.DrawString(nam.ToString(), new Font("Arial", 8), Brushes.White, Coma.pf1[a1].X - 10, Coma.pf1[a1].Y - 15);
-        //   g.DrawString("Азимут " + Coma.azimut[a1].ToString("0") + "\r\n" + "Далность " + (Coma.radius[a1] / km).ToString("0"), new Font("Arial", 8), Brushes.White, Coma.pf1[a1].X, Coma.pf1[a1].Y);
-        //    return bmp;
-        //}
+        internal static void DrawLines(Graphics GRAPH, List<Point> list)
+        {
+            Pen penWITE = new Pen(Brushes.White);
+            GRAPH.SmoothingMode = SmoothingMode.AntiAlias;
+            for (int i = 0; i < list.Count-1; i++)
+            {
+                int pointX1 = list[i].X;
+                int pointY1 = list[i].Y;
+                int pointX2 = list[i + 1].X;
+                int pointY2 = list[i + 1].Y;
+                GRAPH.DrawLine(penWITE, pointX1, pointY1, pointX2, pointY2);
+            }
+        }
     }
 }
