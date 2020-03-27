@@ -52,7 +52,7 @@ namespace Radar
                 a1 = 0;
                 foreach (Air air in Com.air)
                 {
-                    radar.His(e.Graphics, pictureBoxRadar.Width, pictureBoxRadar.Height, scale, CorX[a1], checkBox2.Checked,checkBox3.Checked, air.His, air.Namber, a, a1, sd,air.vys);
+                    radar.His(e.Graphics, pictureBoxRadar.Width, pictureBoxRadar.Height, scale, CorX[a1], checkBox2.Checked,checkBox3.Checked, air.His, air.Number, a, a1, sd,air.vys);
                     radar.Line(e.Graphics, pictureBoxRadar.Width, pictureBoxRadar.Height, scale, checkBox1.Checked,air.Lenght, air.XY, air.Trajectory);
                     a1++;
                 }

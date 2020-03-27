@@ -4,7 +4,7 @@ namespace Radar
 {
     public class Air
     {
-      public int Namber;
+      public int Number;
       public int Lenght;
       public double StartAzimuth;
       public double StartDistance;

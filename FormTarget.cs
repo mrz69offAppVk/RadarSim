@@ -61,7 +61,7 @@ namespace Radar
             }
             Airplane.Hi = true;
             Air air = new Air();
-            air.Namber = Airplane.Namber;
+            air.Number = Airplane.Namber;
             air.Lenght = Airplane.Lenght;
             air.Speed = Airplane.Speed;
             air.His = Airplane.His;
