@@ -21,21 +21,22 @@ namespace Radar
         }
         float a = 0;
         int scale = 15;
-        int posX, posY;
+        //int posX, posY;
         bool on = true;
-        bool pop = true;
+        //bool pop = true;
         int ag = 3;
-        float cx, cy;
+        //float cx, cy;
         PointF[] CorX;
         List<PointF[]> buf;
         bool ok = false;
-        bool mar = false;
+        //bool mar = false;
         bool sd;
         int[] cone;
         double[] percent;
         double[] min;
         double[] max;
-        int a1 = 0, a2 = 0, a3 = 0, a4 = 0;
+        int a1 = 0, a2 = 0, a3 = 0;
+        //int a4 = 0;
         Bitmap memoryImage;
         private void PictureBoxRadar_Paint(object sender, PaintEventArgs e)
         {
@@ -57,7 +58,7 @@ namespace Radar
                     a1++;
                 }
             }
-                radar.Draw(e.Graphics, pictureBoxRadar.Width, pictureBoxRadar.Height, a, scale, on);
+            radar.Draw(e.Graphics, pictureBoxRadar.Width, pictureBoxRadar.Height, a, scale, on);
         }
         void DrawingGrid() 
         {
@@ -71,15 +72,18 @@ namespace Radar
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            a+=ag;
-            if (a >= 360) { a = 0; }
+            a+=ag;if (a >= 360) { a = 0; }
             if (ok == true)
             {
                 CorX = new PointF[Com.cons];
                 a3 = 0;
                 foreach (PointF[] ad in buf)
                 {
-                    if (ad.Length > cone[a3] + 1) { cone[a3]++; CorX[a3] = ad[cone[a3]]; }
+                    if (ad.Length > cone[a3] + 1)
+                    {
+                        cone[a3]++;
+                        CorX[a3] = ad[cone[a3]];
+                    }
                     max[a3] = cone[a3] * percent[a3];
                     a3++;
                 }
@@ -88,35 +92,32 @@ namespace Radar
             sd = false;
         }
 
-        #region scale
-        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            scale = 7; DrawingGrid(); instal(); 
-        }
-
-        private void RadioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            scale = 15; DrawingGrid(); instal(); 
-        }
-        #endregion scale
-
-        #region rotateSpeed
-        private void RadioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            ag = 3;
-        }
         private void RadioButton4_CheckedChanged(object sender, EventArgs e)
         {
             ag = 6;
         }
-        #endregion rotateSpeed
 
-        private void ButtonStart_Click(object sender, EventArgs e)
+        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            scale = 7; DrawingGrid(); Instal(); 
+        }
+
+        private void RadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            scale = 15; DrawingGrid(); Instal(); 
+        }
+
+        private void RadioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            ag = 3;
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
         {
             timer.Start(); if (on == true) {  } else { on = true; }
         }
 
-        private void ButtonStop_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             timer.Stop();
         }
@@ -127,7 +128,7 @@ namespace Radar
             pictureBoxRadar.Refresh(); timer.Stop();
         }
 
-        void instal()
+        void Instal()
         {
             PolarCoordinate polar = new PolarCoordinate();
             a2 = 0;buf = new List<PointF[]>();
@@ -178,7 +179,7 @@ namespace Radar
             }
         }
 
-        private void ButtonFlying_Click(object sender, EventArgs e)
+        private void Button5_Click(object sender, EventArgs e)
         {
             Coma.pf1 = new PointF[Com.cons];
             Coma.pf2 = new PointF[Com.cons];
@@ -192,25 +193,26 @@ namespace Radar
             percent = new double[Com.cons];
             max = new double[Com.cons];
             min = new double[Com.cons];
-            instal();
+            Instal();
             timer.Start();
         }
 
-        private void ButtonAddTarget_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             timer.Stop();
-            FormTarget AddTargetForm = new FormTarget();
-            AddTargetForm.Show();
+            FormTarget newForm = new FormTarget();
+            newForm.Show();
         }
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            DrawingGrid(); instal();
+            DrawingGrid(); Instal();
         }
 
         private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            posX = e.X; posY = e.Y;
+            //posX = e.X; 
+            //posY = e.Y;
         }
     }
 }

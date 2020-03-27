@@ -27,10 +27,9 @@ namespace Radar
         }
         public void His(Graphics e, int width, int height, int scale,PointF point,bool mar,bool mar1 ,bool his,int nam,float a,int a1,bool sd, double vys)
         {
-            // float km = (((float)height) / (scale * 10)) / 2;
+            float km = (((float)height) / (scale * 10)) / 2;
             PointF centr = new PointF(width / 2, height / 2);
             PolarCoordinate polar = new PolarCoordinate();
-            float km = (((float)height) / (scale * 10)) / 2;
             double radius = polar.Polar(centr, point.X, point.Y)[0];
             double azimut = polar.Polar(centr, point.X, point.Y)[1];
             float ps = (float)(1 + (radius / 60));
@@ -40,7 +39,7 @@ namespace Radar
             PointF pf4 = polar.Angel(centr, azimut, radius + ps - pg*2);
             float pe = (float)(10 + (radius / 20));
             float pe1 = (float)(5 + (radius / 20));
-            double D1 = (Coma.radius[a1] / km) / 0.4;
+            double D1 = Coma.radius[a1] / km / 0.4;    //================
             double A1 = Coma.azimut[a1] / 0.0878;
             double AH = A1 - 11;
             double AK = A1 + 11;
@@ -106,8 +105,8 @@ namespace Radar
             PointF pointF = polar.Angel(point, Azimut, Distance);
             double[] ar = polar.Polar(point, pointF.X, pointF.Y);
             //e.DrawString(text+"\n Азимут = " + ar[1].ToString("0")+"\n Дальность = " + (ar[0] / km).ToString("0")  , new Font("Arial", 8), Brushes.White, pointF.X+5, pointF.Y+5);
-            Rectangle rectangle = new Rectangle((int)pointF.X,(int)pointF.Y, 7, 7);
-            e.FillPie(Brushes.Red, rectangle,0,360);
+            Rectangle rectangle = new Rectangle((int)pointF.X - 4, (int)pointF.Y - 4, 8, 8);
+            e.FillPie(Brushes.Red, rectangle,0,90);
         }
         public void Draw(Graphics e, int width, int height,float angel,int scale,bool on)
         { 

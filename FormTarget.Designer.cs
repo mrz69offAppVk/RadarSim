@@ -32,14 +32,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxTargetNum = new System.Windows.Forms.TextBox();
-            this.textBoxAzimut = new System.Windows.Forms.TextBox();
-            this.textBoxDistance = new System.Windows.Forms.TextBox();
+            this.textBoxStartAzimut = new System.Windows.Forms.TextBox();
+            this.textBoxStartDistance = new System.Windows.Forms.TextBox();
             this.groupBoxPolarInfo = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxEndAzimut = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxEndDistance = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -85,27 +85,27 @@
             this.textBoxTargetNum.Text = "0";
             this.textBoxTargetNum.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
-            // textBoxAzimut
+            // textBoxStartAzimut
             // 
-            this.textBoxAzimut.Location = new System.Drawing.Point(6, 32);
-            this.textBoxAzimut.Name = "textBoxAzimut";
-            this.textBoxAzimut.Size = new System.Drawing.Size(137, 20);
-            this.textBoxAzimut.TabIndex = 7;
-            this.textBoxAzimut.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
+            this.textBoxStartAzimut.Location = new System.Drawing.Point(6, 32);
+            this.textBoxStartAzimut.Name = "textBoxStartAzimut";
+            this.textBoxStartAzimut.Size = new System.Drawing.Size(137, 20);
+            this.textBoxStartAzimut.TabIndex = 7;
+            this.textBoxStartAzimut.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
-            // textBoxDistance
+            // textBoxStartDistance
             // 
-            this.textBoxDistance.Location = new System.Drawing.Point(6, 84);
-            this.textBoxDistance.Name = "textBoxDistance";
-            this.textBoxDistance.Size = new System.Drawing.Size(137, 20);
-            this.textBoxDistance.TabIndex = 8;
-            this.textBoxDistance.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
+            this.textBoxStartDistance.Location = new System.Drawing.Point(6, 84);
+            this.textBoxStartDistance.Name = "textBoxStartDistance";
+            this.textBoxStartDistance.Size = new System.Drawing.Size(137, 20);
+            this.textBoxStartDistance.TabIndex = 8;
+            this.textBoxStartDistance.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
             // 
             // groupBoxPolarInfo
             // 
-            this.groupBoxPolarInfo.Controls.Add(this.textBoxAzimut);
+            this.groupBoxPolarInfo.Controls.Add(this.textBoxStartAzimut);
             this.groupBoxPolarInfo.Controls.Add(this.label2);
-            this.groupBoxPolarInfo.Controls.Add(this.textBoxDistance);
+            this.groupBoxPolarInfo.Controls.Add(this.textBoxStartDistance);
             this.groupBoxPolarInfo.Controls.Add(this.label3);
             this.groupBoxPolarInfo.Location = new System.Drawing.Point(12, 63);
             this.groupBoxPolarInfo.Name = "groupBoxPolarInfo";
@@ -117,9 +117,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.textBoxEndAzimut);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.textBoxEndDistance);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(12, 182);
             this.groupBox2.Name = "groupBox2";
@@ -137,13 +137,13 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Растояние : ";
             // 
-            // textBox4
+            // textBoxEndAzimut
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 32);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(137, 20);
-            this.textBox4.TabIndex = 7;
-            this.textBox4.TextChanged += new System.EventHandler(this.TextBox4_TextChanged);
+            this.textBoxEndAzimut.Location = new System.Drawing.Point(6, 32);
+            this.textBoxEndAzimut.Name = "textBoxEndAzimut";
+            this.textBoxEndAzimut.Size = new System.Drawing.Size(137, 20);
+            this.textBoxEndAzimut.TabIndex = 7;
+            this.textBoxEndAzimut.TextChanged += new System.EventHandler(this.TextBoxEndAzimut_TextChanged);
             // 
             // label4
             // 
@@ -154,13 +154,13 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Азимут ";
             // 
-            // textBox5
+            // textBoxEndDistance
             // 
-            this.textBox5.Location = new System.Drawing.Point(6, 84);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(137, 20);
-            this.textBox5.TabIndex = 8;
-            this.textBox5.TextChanged += new System.EventHandler(this.TextBox5_TextChanged);
+            this.textBoxEndDistance.Location = new System.Drawing.Point(6, 84);
+            this.textBoxEndDistance.Name = "textBoxEndDistance";
+            this.textBoxEndDistance.Size = new System.Drawing.Size(137, 20);
+            this.textBoxEndDistance.TabIndex = 8;
+            this.textBoxEndDistance.TextChanged += new System.EventHandler(this.TextBoxEndDistance_TextChanged);
             // 
             // label5
             // 
@@ -308,13 +308,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxTargetNum;
-        private System.Windows.Forms.TextBox textBoxAzimut;
-        private System.Windows.Forms.TextBox textBoxDistance;
+        private System.Windows.Forms.TextBox textBoxStartAzimut;
+        private System.Windows.Forms.TextBox textBoxStartDistance;
         private System.Windows.Forms.GroupBox groupBoxPolarInfo;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxEndAzimut;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxEndDistance;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton radioButton2;
