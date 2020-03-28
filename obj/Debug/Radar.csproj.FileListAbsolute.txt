@@ -65,7 +65,6 @@ C:\Users\moroz69off\source\repos\RadarSim2\obj\Debug\Radar.pdb
 C:\Users\moroz69off\source\repos\RadarSim\bin\Debug\Radar.exe.config
 C:\Users\moroz69off\source\repos\RadarSim\bin\Debug\Radar.exe
 C:\Users\moroz69off\source\repos\RadarSim\bin\Debug\Radar.pdb
-C:\Users\moroz69off\source\repos\RadarSim\obj\Debug\Radar.csprojAssemblyReference.cache
 C:\Users\moroz69off\source\repos\RadarSim\obj\Debug\Radar.FormRadar.resources
 C:\Users\moroz69off\source\repos\RadarSim\obj\Debug\Radar.FormTarget.resources
 C:\Users\moroz69off\source\repos\RadarSim\obj\Debug\Radar.Properties.Resources.resources

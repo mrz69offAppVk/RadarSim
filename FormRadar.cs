@@ -130,7 +130,8 @@ namespace Radar
         void instal()
         {
             PolarCoordinate polar = new PolarCoordinate();
-            a2 = 0;buf = new List<PointF[]>();
+            a2 = 0;
+            buf = new List<PointF[]>();
             foreach (Air air in Com.air)
             { 
                 buf.Add ( polar.XY(air.Trajectory, pictureBoxRadar.Width, pictureBoxRadar.Height, scale,air.Lenght,air.Speed));
@@ -139,11 +140,11 @@ namespace Radar
                 cone[a2] = (int)(max[a2] / percent[a2]);
                 a2++;
             }
-           
-            ok = true; sd = true;
+            ok = true;
+            sd = true;
         }
 
-        private void Button7_Click(object sender, EventArgs e)
+        private void ButtonPhoto_Click(object sender, EventArgs e)
         {
             checkBox1.Checked = true; checkBox2.Checked = true; checkBox3.Checked = true;
             if (on == true) { on = false; } else { }
@@ -162,7 +163,7 @@ namespace Radar
             checkBox1.Checked = false; checkBox2.Checked = false; checkBox3.Checked = false;
         }
 
-        private void Button6_Click(object sender, EventArgs e)
+        private void ButtonStopFly_Click(object sender, EventArgs e)
         {   string stop="";
             timer.Stop();
             saveFileDialog.FileName = "Полет 1";
@@ -178,7 +179,7 @@ namespace Radar
             }
         }
 
-        private void ButtonFlying_Click(object sender, EventArgs e)
+        private void ButtonFlying_Click(object sender, EventArgs e) // Налёт
         {
             Coma.pf1 = new PointF[Com.cons];
             Coma.pf2 = new PointF[Com.cons];
@@ -203,12 +204,16 @@ namespace Radar
             AddTargetForm.Show();
         }
 
-        private void Form1_Resize(object sender, EventArgs e)
+        private void FormRadar_Resize(object sender, EventArgs e)
+        {
+            DrawingGrid(); instal();
+        }
+        private void FormRadar_SizeChanged(object sender, EventArgs e)
         {
             DrawingGrid(); instal();
         }
 
-        private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
+        private void PictureBoxFormRadar_MouseMove(object sender, MouseEventArgs e)
         {
             posX = e.X; posY = e.Y;
         }

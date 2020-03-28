@@ -45,7 +45,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxSpeed = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.pictureBoxTarget = new System.Windows.Forms.PictureBox();
@@ -83,7 +83,7 @@
             this.textBoxTargetNum.Size = new System.Drawing.Size(137, 20);
             this.textBoxTargetNum.TabIndex = 6;
             this.textBoxTargetNum.Text = "0";
-            this.textBoxTargetNum.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.textBoxTargetNum.TextChanged += new System.EventHandler(this.TextBoxTargetNum_TextChanged);
             // 
             // textBoxStartAzimut
             // 
@@ -176,7 +176,7 @@
             this.groupBox3.Controls.Add(this.textBox7);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.textBoxSpeed);
             this.groupBox3.Controls.Add(this.radioButton2);
             this.groupBox3.Controls.Add(this.radioButton1);
             this.groupBox3.Location = new System.Drawing.Point(12, 352);
@@ -212,14 +212,14 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Скорость полета км/ч";
             // 
-            // textBox6
+            // textBoxSpeed
             // 
-            this.textBox6.Location = new System.Drawing.Point(6, 75);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(137, 20);
-            this.textBox6.TabIndex = 15;
-            this.textBox6.Text = "1000";
-            this.textBox6.TextChanged += new System.EventHandler(this.TextBox6_TextChanged);
+            this.textBoxSpeed.Location = new System.Drawing.Point(6, 75);
+            this.textBoxSpeed.Name = "textBoxSpeed";
+            this.textBoxSpeed.Size = new System.Drawing.Size(137, 20);
+            this.textBoxSpeed.TabIndex = 15;
+            this.textBoxSpeed.Text = "1000";
+            this.textBoxSpeed.TextChanged += new System.EventHandler(this.TextBoxSpeed_TextChanged);
             // 
             // radioButton2
             // 
@@ -264,7 +264,7 @@
             this.buttonAddTarget.TabIndex = 18;
             this.buttonAddTarget.Text = "Добавить объект ";
             this.buttonAddTarget.UseVisualStyleBackColor = true;
-            this.buttonAddTarget.Click += new System.EventHandler(this.ButtonAdd_Click);
+            this.buttonAddTarget.Click += new System.EventHandler(this.ButtonAddTarget_Click);
             // 
             // groupBox5
             // 
@@ -319,7 +319,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxSpeed;
         private System.Windows.Forms.PictureBox pictureBoxTarget;
         private System.Windows.Forms.Button buttonAddTarget;
         private System.Windows.Forms.GroupBox groupBox5;
