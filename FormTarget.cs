@@ -39,7 +39,7 @@ namespace Radar
         //bool flag = false;
         bool targetStarted = false; // этот флаг обозначает что начата прокладка курса и клики должны обрабатываться добавлением точек в лист
         double oAD = 0.0000001;
-
+        AltiMetro AltiMetr;
         Image image;
         private bool targetEnd = false; // этот флаг обозначает, что последний клик по картинке завершает создание цели
         int targetObjectNumber = 0; // Нумерация создаваемых целей
@@ -130,9 +130,9 @@ namespace Radar
             Airplane.Speed = 0.0001f * Convert.ToSingle(textBoxSpeed.Text); pictureBoxTarget.Refresh();
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
+        private void textBoxAltimeter_TextChanged(object sender, EventArgs e)
         {
-            Airplane.vys = Convert.ToDouble(textBox7.Text); pictureBoxTarget.Refresh(); 
+            Airplane.vys = Convert.ToDouble(textBoxAltimeter.Text); pictureBoxTarget.Refresh(); 
         }
         #endregion textBoxes
 
@@ -231,18 +231,19 @@ namespace Radar
         private void TargetStart(MouseEventArgs e)
         {
             targetObjectNumber++;
-            list = new List<Point>(); 
-            //flag = false;
+            list = new List<Point>();
+            AltiMetr = new AltiMetro(targetObjectNumber);
+            AltiMetr.Altimeter.Add(double.Parse(textBoxAltimeter.Text));
             float km = (((float)pictureBoxTarget.Height) / (15 * 10)) / 2;
-            PointF point = new PointF(pictureBoxTarget.Width / 2, pictureBoxTarget.Height / 2);
+            PointF pointCenter = new PointF(pictureBoxTarget.Width / 2, pictureBoxTarget.Height / 2);
             PolarCoordinate polar = new PolarCoordinate();
-            double[] ar = polar.Polar(point, e.X, e.Y);
+            double[] ar = polar.Polar(pointCenter, e.X, e.Y);
             Airplane.StartAzimuth = ar[1];
             Airplane.StartDistance = ar[0] / km;
-            Point targetPoint = new Point(e.X, e.Y);
-            list.Add(targetPoint);
             textBoxStartAzimut.Text = Airplane.StartAzimuth.ToString();
             textBoxStartDistance.Text = Airplane.StartDistance.ToString();
+            Point targetPoint = new Point(e.X, e.Y);
+            list.Add(targetPoint);
             targetStarted = true;
         }
         private void TargetContinue(MouseEventArgs e)
@@ -257,7 +258,7 @@ namespace Radar
             Airplane.EndDistance = ar[0] / km;
             Point targetPoint = new Point(e.X, e.Y);
             string targetPointString = targetPoint.X.ToString() + ' ' + targetPoint.Y.ToString() + '\n';
-            File.AppendAllText($"target{targetObjectNumber}.ini", targetPointString);
+            //File.AppendAllText($"target{targetObjectNumber}.ini", targetPointString);
             list.Add(targetPoint);
             if (list.Count > 1) { RadarDraw.DrawLines(GRAPH, list); }
             textBoxEndAzimut.Text = Airplane.EndAzimuth.ToString();

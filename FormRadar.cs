@@ -21,21 +21,18 @@ namespace Radar
         }
         float a = 0;
         int scale = 15;
-        int posX, posY;
+        private int posX, posY;
         bool on = true;
-        bool pop = true;
         int ag = 3;
-        float cx, cy;
         PointF[] CorX;
         List<PointF[]> buf;
         bool ok = false;
-        bool mar = false;
         bool sd;
         int[] cone;
         double[] percent;
         double[] min;
         double[] max;
-        int a1 = 0, a2 = 0, a3 = 0, a4 = 0;
+        int a1 = 0, a2 = 0, a3 = 0;
         Bitmap memoryImage;
         private void PictureBoxRadar_Paint(object sender, PaintEventArgs e)
         {
@@ -57,16 +54,12 @@ namespace Radar
                     a1++;
                 }
             }
-                radar.Draw(e.Graphics, pictureBoxRadar.Width, pictureBoxRadar.Height, a, scale, on);
+            radar.Draw(e.Graphics, pictureBoxRadar.Width, pictureBoxRadar.Height, a, scale, on);
         }
         void DrawingGrid() 
         {
             RadarDraw radar = new RadarDraw();
             pictureBoxRadar.Image = radar.Grid(pictureBoxRadar.Width, pictureBoxRadar.Height, scale);
-        }
-        private void PictureBoxRadar_Resize(object sender, EventArgs e)
-        {
-            pictureBoxRadar.Refresh();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -111,21 +104,24 @@ namespace Radar
         }
         #endregion rotateSpeed
 
-        private void ButtonStart_Click(object sender, EventArgs e)
+        #region start-pause-stop
+        private void ButtonStartRotate_Click(object sender, EventArgs e)
         {
-            timer.Start(); if (on == true) {  } else { on = true; }
+            timer.Start();
+            if (on!= true) { on = true; }
         }
 
-        private void ButtonStop_Click(object sender, EventArgs e)
+        private void ButtonPause_Click(object sender, EventArgs e)
         {
             timer.Stop();
         }
 
-        private void Button4_Click(object sender, EventArgs e)
+        private void ButtonStopRotate_Click(object sender, EventArgs e)
         {
-            if (on == true) { on = false; } else {  }
+            if (on == true) { on = false; }
             pictureBoxRadar.Refresh(); timer.Stop();
         }
+        #endregion start-pause-stop
 
         void instal()
         {
@@ -144,6 +140,7 @@ namespace Radar
             sd = true;
         }
 
+        #region flying buttons
         private void ButtonPhoto_Click(object sender, EventArgs e)
         {
             checkBox1.Checked = true; checkBox2.Checked = true; checkBox3.Checked = true;
@@ -201,13 +198,20 @@ namespace Radar
         {
             timer.Stop();
             FormTarget AddTargetForm = new FormTarget();
-            AddTargetForm.Show();
+            AddTargetForm.ShowDialog();
         }
+        #endregion flying buttons
 
         private void FormRadar_Resize(object sender, EventArgs e)
         {
             DrawingGrid(); instal();
         }
+
+        private void PictureBoxRadar_Resize(object sender, EventArgs e)
+        {
+            pictureBoxRadar.Refresh();
+        }
+
         private void FormRadar_SizeChanged(object sender, EventArgs e)
         {
             DrawingGrid(); instal();

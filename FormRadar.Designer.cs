@@ -38,9 +38,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonStartRotate = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonStopRotate = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.buttonFlying = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -159,20 +159,20 @@
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.RadioButton3_CheckedChanged);
             // 
-            // button2
+            // buttonStartRotate
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(875, 426);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 30);
-            this.button2.TabIndex = 14;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.ButtonStart_Click);
+            this.buttonStartRotate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonStartRotate.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonStartRotate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonStartRotate.BackgroundImage")));
+            this.buttonStartRotate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonStartRotate.FlatAppearance.BorderSize = 0;
+            this.buttonStartRotate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStartRotate.Location = new System.Drawing.Point(875, 426);
+            this.buttonStartRotate.Name = "buttonStartRotate";
+            this.buttonStartRotate.Size = new System.Drawing.Size(40, 30);
+            this.buttonStartRotate.TabIndex = 14;
+            this.buttonStartRotate.UseVisualStyleBackColor = false;
+            this.buttonStartRotate.Click += new System.EventHandler(this.ButtonStartRotate_Click);
             // 
             // button3
             // 
@@ -187,22 +187,22 @@
             this.button3.Size = new System.Drawing.Size(40, 30);
             this.button3.TabIndex = 15;
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.ButtonStop_Click);
+            this.button3.Click += new System.EventHandler(this.ButtonPause_Click);
             // 
-            // button4
+            // buttonStopRotate
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(969, 426);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(40, 30);
-            this.button4.TabIndex = 16;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            this.buttonStopRotate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonStopRotate.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonStopRotate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonStopRotate.BackgroundImage")));
+            this.buttonStopRotate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonStopRotate.FlatAppearance.BorderSize = 0;
+            this.buttonStopRotate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStopRotate.Location = new System.Drawing.Point(969, 426);
+            this.buttonStopRotate.Name = "buttonStopRotate";
+            this.buttonStopRotate.Size = new System.Drawing.Size(40, 30);
+            this.buttonStopRotate.TabIndex = 16;
+            this.buttonStopRotate.UseVisualStyleBackColor = false;
+            this.buttonStopRotate.Click += new System.EventHandler(this.ButtonStopRotate_Click);
             // 
             // timer
             // 
@@ -300,9 +300,9 @@
             this.Controls.Add(this.buttonPhoto);
             this.Controls.Add(this.buttonStopFly);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.buttonStopRotate);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonStartRotate);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonFlying);
@@ -334,9 +334,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonStartRotate;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonStopRotate;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button buttonFlying;
         private System.Windows.Forms.GroupBox groupBox3;

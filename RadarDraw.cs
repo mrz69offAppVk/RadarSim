@@ -27,14 +27,14 @@ namespace Radar
         }
         public void His(Graphics e, int width, int height, int scale,PointF point,bool mar,bool mar1 ,bool his,int nam,float a,int a1,bool sd, double vys)
         {
-            double D1;
-            double A1;
-            double AH;
-            double AK;
-            double AHO;
-            double AKO;
-            double DO;
-            double VYS;
+            double D1 = 0;
+            double A1 = 0;
+            double AH = 0;
+            double AK = 0;
+            double DO = 0;
+            double AHO = 0;
+            double AKO = 0;
+            double VYS = 0;
 
             PolarCoordinate polar = new PolarCoordinate();
             PointF center = new PointF(width / 2, height / 2);
@@ -66,8 +66,13 @@ namespace Radar
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Message: " + ex.Message + '\n' + "StackTrace: " + ex.StackTrace, "Radar ERROR");
-                throw;
+                MessageBox.Show(
+                    "Ошибка приложения!\nMessage: " +
+                    ex.Message + '\n' +
+                    "StackTrace: " + ex.StackTrace +
+                    "\nПриложение будет остановлено",
+                    "Radar ERROR"
+                    );
             }
 
             if (a < azimut + 3 && a > azimut - 3)
@@ -84,18 +89,30 @@ namespace Radar
                 catch (Exception ex)
                 {
                     MessageBox.Show("Message: " + ex.Message + '\n' + "StackTrace: " + ex.StackTrace, "Radar ERROR");
-                    throw;
                 }
 
                 if (his == true) { hi = "0"; } else { hi = "1"; }
 
                 if (his == true)
                 {
-                    Coma.text[nam] = AH.ToString("0") + "," + AK.ToString("0") + "," + D1.ToString("0") + "," + hi + "," + AHO.ToString("0") + "," + AKO.ToString("0") + "," + DO.ToString("0") + "," + VYS.ToString("0") + ";" + "\r\n"; 
+                    Coma.text[nam] = 
+                        AH.ToString("0") + "," +
+                        AK.ToString("0") + "," +
+                        D1.ToString("0") + "," +
+                        hi + ","
+                        + AHO.ToString("0") + "," +
+                        AKO.ToString("0") + "," +
+                        DO.ToString("0") + "," +
+                        VYS.ToString("0") + ";" + "\r\n"; 
                 }
                 else
                 {
-                    Coma.text[nam] = AH.ToString("0") + "," + AK.ToString("0") + "," + D1.ToString("0") + "," + hi +"," + VYS.ToString("0")+";" + "\r\n";//вывод данных 
+                    Coma.text[nam] = 
+                        AH.ToString("0") + "," +
+                        AK.ToString("0") + "," +
+                        D1.ToString("0") + "," +
+                        hi +"," +
+                        VYS.ToString("0")+";" + "\r\n";//вывод данных 
                 }
             }
 
@@ -109,7 +126,7 @@ namespace Radar
                 Coma.vys[a1] = vys;
             }
 
-            if (Coma.radius[a1] / km<150 && Coma.radius[a1] / km > 15)
+            if (Coma.radius[a1] / km < 150 && Coma.radius[a1] / km > 15)
             { 
                 e.DrawLine(
                     new Pen(Color.FromArgb(255, 170, 130, 0), pe),
@@ -134,27 +151,33 @@ namespace Radar
                 }
                  Coma.cs++; 
             }
-
+            string azimutStr1 = Coma.azimut[a1].ToString("0,0");
+            string distanceStr1 = (Coma.radius[a1] / km).ToString("0,0");
+            string altitudeStr1 = Coma.vys[a1].ToString();
             e.DrawString(
                 nam + " ) " + 
-                "\tАзимут " + Coma.azimut[a1].ToString("0.000") + 
-                "\tДальность " + (Coma.radius[a1] / km).ToString("0.000")  + 
-                "\tвысота " + (Coma.vys[a1]).ToString("0.0"),
-                    new Font("Arial", 8), Brushes.White, 10, 40 + (nam * 15)); ;//основное поле
+                " Азимут: " + azimutStr1 + " " +
+                "\t Дальность: " + distanceStr1 + " "+
+                "\tBысота: " + altitudeStr1,
+                    new Font("Consolas", 8), Brushes.White, 10, 40 + (nam * 15)); ;//основное поле
 
             if (mar == true)
             {
-                e.DrawString(nam.ToString(), new Font("Arial", 8), Brushes.White, Coma.pf1[a1].X - 10, Coma.pf1[a1].Y - 15);
+                e.DrawString(nam.ToString(), new Font("Consolas", 8), Brushes.White, Coma.pf1[a1].X - 10, Coma.pf1[a1].Y - 15);
             }
 
             if (mar1 == true)
             {
-                e.DrawString("Азимут "+ Coma.azimut[a1].ToString("0")+"\r\n"+
-                    "Дальность "+(Coma.radius[a1] / km).ToString("0"), new Font("Arial", 8),
-                    Brushes.White, Coma.pf1[a1].X , Coma.pf1[a1].Y );
+                string azimutStr = Coma.azimut[a1].ToString("0,0");
+                string distanceStr = (Coma.radius[a1] / km).ToString("0,0");
+                e.DrawString(
+                    "Азимут " + azimutStr + "\r\n" +
+                    "Дальность " + distanceStr,
+                    new Font("Consolas", 8),
+                    Brushes.White, Coma.pf1[a1].X, Coma.pf1[a1].Y);
             }
         }
-        public void Point(Graphics e, int width, int height,int scale,double a,double d,string text)
+        public void Point(Graphics e, int width, int height,int scale,double azimut,double distance, string text)
         {
             float km = (((float)height) / (scale * 10)) / 2;
             if (Airplane.image != null)
@@ -163,8 +186,8 @@ namespace Radar
                 int CentrImageY = Airplane.image.Height / 2;
                 e.DrawImage(Airplane.image, 400 - CentrImageX, 400 - CentrImageY);
             }
-            double Azimut = a;
-            double Distance = (km * d);
+            double Azimut = azimut;
+            double Distance = (km * distance);
             
             PointF point = new PointF(width / 2, height / 2);
             PolarCoordinate polar = new PolarCoordinate();
@@ -217,14 +240,14 @@ namespace Radar
                     g.DrawEllipse(new Pen(all.colors[1], 1), r); 
                 }
             }
-            float  x1 = 0, y1 = 0,x3 = 0, y3 = 0;
+
             for (float i = 0; i < Math.PI * 20; i += (float)Math.PI)
             {
                 can++;
-                x1 = WidthHalf + (float)Math.Cos(i * 0.1) * SizeEllipse / 2;
-                y1 = HeilghtHalf + (float)Math.Sin(i * 0.1) * SizeEllipse / 2;
-                x3 = WidthHalf + (float)Math.Cos(i * 0.1) * SizeEllipse * coun / 2;
-                y3 = HeilghtHalf + (float)Math.Sin(i * 0.1) * SizeEllipse * coun / 2;
+                float x1 = WidthHalf + (float)Math.Cos(i * 0.1) * SizeEllipse / 2;
+                float y1 = HeilghtHalf + (float)Math.Sin(i * 0.1) * SizeEllipse / 2;
+                float x3 = WidthHalf + (float)Math.Cos(i * 0.1) * SizeEllipse * coun / 2;
+                float y3 = HeilghtHalf + (float)Math.Sin(i * 0.1) * SizeEllipse * coun / 2;
                 if (can == 2) { g.DrawLine(new Pen(all.colors[1], 1), x1, y1, x3, y3); can = 0; } else { g.DrawLine(new Pen(all.colors[0], 1), x1, y1, x3, y3); }
             }
             return bmp;

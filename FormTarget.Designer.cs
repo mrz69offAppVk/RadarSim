@@ -42,7 +42,7 @@
             this.textBoxEndDistance = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxAltimeter = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxSpeed = new System.Windows.Forms.TextBox();
@@ -173,7 +173,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Controls.Add(this.textBoxAltimeter);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.textBoxSpeed);
@@ -186,13 +186,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Принадлежность";
             // 
-            // textBox7
+            // textBoxAltimeter
             // 
-            this.textBox7.Location = new System.Drawing.Point(5, 141);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(137, 20);
-            this.textBox7.TabIndex = 18;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBoxAltimeter.Location = new System.Drawing.Point(5, 141);
+            this.textBoxAltimeter.Name = "textBoxAltimeter";
+            this.textBoxAltimeter.Size = new System.Drawing.Size(137, 20);
+            this.textBoxAltimeter.TabIndex = 18;
+            this.textBoxAltimeter.Text = "0";
+            this.textBoxAltimeter.TextChanged += new System.EventHandler(this.textBoxAltimeter_TextChanged);
             // 
             // label7
             // 
@@ -325,7 +326,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxAltimeter;
         private System.Windows.Forms.Label label7;
     }
 }
