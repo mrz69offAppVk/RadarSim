@@ -49,6 +49,7 @@ namespace Radar
             pictureBoxTarget.Refresh();
             targetStarted = false;
 
+            Airplane.vys = AltiMetr.Altimeter.ToArray();
             Airplane.Namber = Convert.ToInt32(textBoxTargetNum.Text);
             Airplane.Speed = 0.0001F * Convert.ToSingle(textBoxSpeed.Text);
             int count = 0;
@@ -132,7 +133,7 @@ namespace Radar
 
         private void textBoxAltimeter_TextChanged(object sender, EventArgs e)
         {
-            Airplane.vys = Convert.ToDouble(textBoxAltimeter.Text); pictureBoxTarget.Refresh(); 
+            pictureBoxTarget.Refresh(); 
         }
         #endregion textBoxes
 
@@ -232,7 +233,7 @@ namespace Radar
         {
             targetObjectNumber++;
             list = new List<Point>();
-            AltiMetr = new AltiMetro(targetObjectNumber);
+            AltiMetr = new AltiMetro(targetObjectNumber-1);
             AltiMetr.Altimeter.Add(double.Parse(textBoxAltimeter.Text));
             float km = (((float)pictureBoxTarget.Height) / (15 * 10)) / 2;
             PointF pointCenter = new PointF(pictureBoxTarget.Width / 2, pictureBoxTarget.Height / 2);
@@ -249,7 +250,7 @@ namespace Radar
         private void TargetContinue(MouseEventArgs e)
         {
             RadarDraw RD = new RadarDraw();
-            //flag = false;
+            AltiMetr.Altimeter.Add(double.Parse(textBoxAltimeter.Text));
             float km = (((float)pictureBoxTarget.Height) / (15 * 10)) / 2;
             PointF point = new PointF(pictureBoxTarget.Width / 2, pictureBoxTarget.Height / 2);
             PolarCoordinate polar = new PolarCoordinate();
@@ -263,7 +264,6 @@ namespace Radar
             if (list.Count > 1) { RadarDraw.DrawLines(GRAPH, list); }
             textBoxEndAzimut.Text = Airplane.EndAzimuth.ToString();
             textBoxEndDistance.Text = Airplane.EndDistance.ToString();
-
         }
         #endregion mouse events
     }

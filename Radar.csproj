@@ -70,7 +70,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RadarDraw.cs" />
-    <Compile Include="TargetObject.cs" />
+    <Compile Include="AltiMetro.cs" />
     <EmbeddedResource Include="FormRadar.resx">
       <DependentUpon>FormRadar.cs</DependentUpon>
     </EmbeddedResource>

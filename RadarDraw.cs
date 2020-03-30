@@ -151,8 +151,9 @@ namespace Radar
                 }
                  Coma.cs++; 
             }
-            string azimutStr1 = Coma.azimut[a1].ToString("0,0");
-            string distanceStr1 = (Coma.radius[a1] / km).ToString("0,0");
+            const string Format = "0,0";
+            string azimutStr1 = Coma.azimut[a1].ToString(Format);
+            string distanceStr1 = (Coma.radius[a1] / km).ToString(Format);
             string altitudeStr1 = Coma.vys[a1].ToString();
             e.DrawString(
                 nam + " ) " + 
@@ -168,8 +169,8 @@ namespace Radar
 
             if (mar1 == true)
             {
-                string azimutStr = Coma.azimut[a1].ToString("0,0");
-                string distanceStr = (Coma.radius[a1] / km).ToString("0,0");
+                string azimutStr = Coma.azimut[a1].ToString(Format);
+                string distanceStr = (Coma.radius[a1] / km).ToString(Format);
                 e.DrawString(
                     "Азимут " + azimutStr + "\r\n" +
                     "Дальность " + distanceStr,

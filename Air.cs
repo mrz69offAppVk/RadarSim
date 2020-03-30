@@ -17,6 +17,6 @@ namespace Radar
       public double[,] Trajectory;
       public PointF[] XY;
       public double Distance;
-      public double vys;
+      public double[] vys;
     }
 }
