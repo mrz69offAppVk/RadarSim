@@ -17,8 +17,8 @@ namespace Radar
        static public double EndDistance;
        static public float Speed;
        static public bool His=true;
-        static public bool Hi;
-        static public Image image;
+       static public bool Hi;
+       static public Image image;
        static public double[,] Trajectory;
        static public PointF[] XY;
        static public double Distance;

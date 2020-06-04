@@ -1,0 +1,10 @@
+C:\Users\moroz69off\Source\Repos\RadarSim3\RadarSim\bin\Debug\RadarSim.exe.config
+C:\Users\moroz69off\Source\Repos\RadarSim3\RadarSim\bin\Debug\RadarSim.exe
+C:\Users\moroz69off\Source\Repos\RadarSim3\RadarSim\bin\Debug\RadarSim.pdb
+C:\Users\moroz69off\Source\Repos\RadarSim3\RadarSim\obj\Debug\RadarSim.csprojAssemblyReference.cache
+C:\Users\moroz69off\Source\Repos\RadarSim3\RadarSim\obj\Debug\RadarSim.FormRadar.resources
+C:\Users\moroz69off\Source\Repos\RadarSim3\RadarSim\obj\Debug\RadarSim.Properties.Resources.resources
+C:\Users\moroz69off\Source\Repos\RadarSim3\RadarSim\obj\Debug\RadarSim.csproj.GenerateResource.cache
+C:\Users\moroz69off\Source\Repos\RadarSim3\RadarSim\obj\Debug\RadarSim.csproj.CoreCompileInputs.cache
+C:\Users\moroz69off\Source\Repos\RadarSim3\RadarSim\obj\Debug\RadarSim.exe
+C:\Users\moroz69off\Source\Repos\RadarSim3\RadarSim\obj\Debug\RadarSim.pdb

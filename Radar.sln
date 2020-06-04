@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radar", "Radar.csproj", "{F44A70A5-C469-432F-BA4B-40DD2ACD060D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarSim", "RadarSim\RadarSim.csproj", "{4165E2EE-0DFD-4EA6-A529-1D80C8E45734}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F44A70A5-C469-432F-BA4B-40DD2ACD060D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F44A70A5-C469-432F-BA4B-40DD2ACD060D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F44A70A5-C469-432F-BA4B-40DD2ACD060D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4165E2EE-0DFD-4EA6-A529-1D80C8E45734}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4165E2EE-0DFD-4EA6-A529-1D80C8E45734}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4165E2EE-0DFD-4EA6-A529-1D80C8E45734}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4165E2EE-0DFD-4EA6-A529-1D80C8E45734}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

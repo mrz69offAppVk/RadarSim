@@ -71,7 +71,8 @@ namespace Radar
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            a+=ag;if (a >= 360) { a = 0; }
+            a+=ag;
+            if (a >= 360) { a = 0; }
             if (ok == true)
             {
                 CorX = new PointF[Com.cons];
@@ -83,7 +84,8 @@ namespace Radar
                     a3++;
                 }
             }
-            pictureBoxRadar.Refresh();sd = false;
+            pictureBoxRadar.Refresh();
+            sd = false;
         }
 
         private void RadioButton4_CheckedChanged(object sender, EventArgs e)
@@ -143,15 +145,15 @@ namespace Radar
             checkBox1.Checked = true; checkBox2.Checked = true; checkBox3.Checked = true;
             if (on == true) { on = false; } else { }
             pictureBoxRadar.Refresh(); timer.Stop();
-            saveFileDialog1.FileName = "Полет 1";
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK) { Thread.Sleep(200); }
+            saveFileDialog.FileName = "Полет 1";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK) { Thread.Sleep(200); }
                 Graphics myGraphics = this.CreateGraphics();
             Size s = this.Size;
             memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
             Graphics memoryGraphics = Graphics.FromImage(memoryImage);
             memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
 
-            memoryImage.Save(saveFileDialog1.FileName + ".jpg");
+            memoryImage.Save(saveFileDialog.FileName + ".jpg");
 
             timer.Start(); if (on == true) { } else { on = true; }
             checkBox1.Checked = false; checkBox2.Checked = false; checkBox3.Checked = false;
@@ -160,8 +162,8 @@ namespace Radar
         private void Button6_Click(object sender, EventArgs e)
         {   string stop="";
             timer.Stop();
-            saveFileDialog1.FileName = "Полет 1";
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            saveFileDialog.FileName = "Полет 1";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
 
             for(int s = 0; s < Coma.cs; s+=Com.cons)
@@ -169,7 +171,7 @@ namespace Radar
                     if (s != 0) { stop += Coma.cv + "\r\n" + Coma.file[s].Remove(Coma.file[s].Length-2) + "/" + "\r\n"; }
                     Coma.cv++;
             }
-            System.IO.File.WriteAllText(saveFileDialog1.FileName+".txt", stop);
+            System.IO.File.WriteAllText(saveFileDialog.FileName+".txt", stop);
             }
         }
 
