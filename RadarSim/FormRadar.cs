@@ -32,12 +32,15 @@ namespace RadarSim
 
         private void FormRadar_Resize(object sender, EventArgs e)
         {
+            RadarGraph.InitGraphics(pictureBoxRadarSim);
+            pictureBoxRadarSim.Refresh();
             RadarGraph.GetGraphics(pictureBoxRadarSim);
+            RadarGraph.DrawRadarGrid(pictureBoxRadarSim);
         }
 
         private void ButtonAddTargets_Click(object sender, EventArgs e)
         {
-            RadarGraph.DrawCircle(100, 100, 50);
+            RadarGraph.DrawRadarGrid(pictureBoxRadarSim);
         }
     }
 }
