@@ -45,6 +45,7 @@
             this.pictureBoxRadarSim.TabIndex = 0;
             this.pictureBoxRadarSim.TabStop = false;
             this.pictureBoxRadarSim.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxRadarSim_Paint);
+            this.pictureBoxRadarSim.Layout += new System.Windows.Forms.LayoutEventHandler(this.pictureBoxRadarSim_Layout);
             // 
             // timer
             // 
@@ -78,6 +79,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRadar";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormRadar_Load);
             this.Resize += new System.EventHandler(this.FormRadar_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRadarSim)).EndInit();
             this.ResumeLayout(false);

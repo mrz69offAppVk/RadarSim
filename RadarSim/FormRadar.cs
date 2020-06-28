@@ -17,7 +17,6 @@ namespace RadarSim
         public FormRadar()
         {
             InitializeComponent();
-            RadarGraph.InitGraphics(pictureBoxRadarSim);
         }
 
         private void PictureBoxRadarSim_Paint(object sender, PaintEventArgs e)
@@ -40,7 +39,17 @@ namespace RadarSim
 
         private void ButtonAddTargets_Click(object sender, EventArgs e)
         {
-            RadarGraph.DrawRadarGrid(pictureBoxRadarSim);
+
+        }
+
+        private void pictureBoxRadarSim_Layout(object sender, LayoutEventArgs e)
+        {
+
+        }
+
+        private void FormRadar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
