@@ -10,11 +10,11 @@ namespace Radar
     public class AllColor
     {
         public Color[] colors = new Color[12];
-        public int Bright = 30;
+        
         public AllColor()
         {
-            colors[0] = Color.FromArgb(255,70+Bright,50 + Bright, 0);
-            colors[1] = Color.FromArgb(255, 140 + Bright, 100 + Bright, 0);
+            colors[0] = Color.FromArgb(255,100,80, 0);
+            colors[1] = Color.FromArgb(255, 170, 130, 0);
             colors[2] = Color.SkyBlue;
             colors[3] = Color.Green;
             colors[4] = Color.Goldenrod;
